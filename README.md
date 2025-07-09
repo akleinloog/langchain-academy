@@ -1,5 +1,37 @@
 ![LangChain Academy](https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/66e9eba1020525eea7873f96_LCA-big-green%20(2).svg)
 
+## Get it up and running
+
+After cloning the repo:
+```
+cd langchain-academy
+
+# create python virtual environment
+python -m venv venv
+
+# activate the virtual environment
+source venv/bin/activate
+
+# install dependencies
+pip install -r requirements.txt
+```
+
+Add env file with the following settings (see further down where to get the values):
+```
+LANGCHAIN_API_KEY=<api-key>
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
+LANGSMITH_PROJECT="langrapg-course"
+OPENAI_API_KEY=<api-key>
+TAVILY_API_KEY=<api-key>
+```
+Copy the env file to the `/studio`foldres in the modules.
+
+## Modifcations
+
+Some changes were made to the original course material:
+- Replaced `gpt-4o` with `gpt-4.1-mini` as this model included in the current free tier.
+
 ## Introduction
 
 Welcome to LangChain Academy! 
