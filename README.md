@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 Add env file with the following settings (see further down where to get the values):
 ```
-LANGCHAIN_API_KEY=<api-key>
+LANGSMITH_API_KEY=<api-key>
 LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_PROJECT="langrapg-course"
