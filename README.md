@@ -22,7 +22,6 @@ LANGSMITH_API_KEY=<api-key>
 LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_PROJECT="langrapg-course"
-OPENAI_API_KEY=<api-key>
 TAVILY_API_KEY=<api-key>
 ```
 Copy the env file to the `/studio`foldres in the modules.
@@ -30,7 +29,17 @@ Copy the env file to the `/studio`foldres in the modules.
 ## Modifcations
 
 Some changes were made to the original course material:
-- Replaced `gpt-4o` with `gpt-4.1-mini` as this model included in the current free tier.
+- Replaced `gpt-4o` with `qwen3:8b` running on the local machine using Ollama.
+
+To get that model up-and-running on a Mac:
+```bash
+brew install ollama
+
+ollama serve
+
+ollama run qwen3:8b
+```
+See the Ollama docs for installation instructions for other setups.
 
 ## Introduction
 
@@ -91,10 +100,6 @@ $ export API_ENV_VAR="your-api-key-here"
 PS> $env:API_ENV_VAR = "your-api-key-here"
 ```
 
-### Set OpenAI API key
-* If you don't have an OpenAI API key, you can sign up [here](https://openai.com/index/openai-api/).
-*  Set `OPENAI_API_KEY` in your environment 
-
 ### Sign up and Set LangSmith API
 * Sign up for LangSmith [here](https://smith.langchain.com/), find out more about LangSmith
 * and how to use it within your workflow [here](https://www.langchain.com/langsmith), and relevant library [docs](https://docs.smith.langchain.com/)!
@@ -130,12 +135,3 @@ You should see the following output:
 
 Open your browser and navigate to the Studio UI: `https://smith.langchain.com/studio/?baseUrl=http://127.0.0.1:2024`.
 
-* To use Studio, you will need to create a .env file with the relevant API keys
-* Run this from the command line to create these files for module 1 to 5, as an example:
-```
-for i in {1..5}; do
-  cp module-$i/studio/.env.example module-$i/studio/.env
-  echo "OPENAI_API_KEY=\"$OPENAI_API_KEY\"" > module-$i/studio/.env
-done
-echo "TAVILY_API_KEY=\"$TAVILY_API_KEY\"" >> module-4/studio/.env
-```

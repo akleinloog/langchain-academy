@@ -12,7 +12,7 @@ from langchain_openai import ChatOpenAI
 
 from langgraph.graph import StateGraph, START, END
 
-llm = ChatOpenAI(model="gpt-4.1-mini", temperature=0) 
+llm = ChatOpenAI(model="qwen3:8b", base_url="http://localhost:11434/v1", api_key="", temperature=0) 
 
 class State(TypedDict):
     question: str
