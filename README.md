@@ -23,7 +23,10 @@ LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_PROJECT="langrapg-course"
 TAVILY_API_KEY=<api-key>
+OPENAI_API_KEY=
 ```
+Note: `OPENAI_API_KEY` can be left empty, but it needs to be there for the ChatOpenAI client to work.
+
 Copy the env file to the `/studio`foldres in the modules.
 
 ## Modifcations
